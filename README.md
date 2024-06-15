@@ -1,17 +1,10 @@
-## **MultiTalk**
+# MultiTalk (INTERSPEECH 2024)
 
-Official PyTorch implementation for MultiTalk, arxiv 2024.
+### [Project Page](https://multi-talk.github.io/) | [Paper](https://multi-talk.github.io/)
+This repository contains a pytorch implementation for the Interspeech 2024 paper, [MultiTalk: Enhancing 3D Talking Head Generation Across Languages with Multilingual Video Dataset](https://multi-talk.github.io/). MultiTalk generates 3D talking head with enhanced multilingual performance.<br><br>
 
-[//]: # (> **CodeTalker: Speech-Driven 3D Facial Animation with Discrete Motion Prior**, ***CVPR 2023***.)
+<img width="700" alt="teaser" src="https://github.com/postech-ami/MultiTalk/assets/59387731/274bd3d6-6f78-4825-af02-0e17ef722c00"> 
 
-[//]: # (>)
-
-[//]: # (> Jinbo Xing, Menghan Xia, Yuechen Zhang, Xiaodong Cun, Jue Wang, Tien-Tsin Wong)
-
-[//]: # (>)
-
-[//]: # (> <a href='https://arxiv.org/abs/2301.02379'><img src='https://img.shields.io/badge/arXiv-2301.02379-red'></a> <a href='https://doubiiu.github.io/projects/codetalker/'><img src='https://img.shields.io/badge/Project-Video-Green'></a> <a href='https://colab.research.google.com/github/Doubiiu/CodeTalker/blob/main/demo.ipynb'><img src='https://img.shields.io/badge/Demo-Open in Colab-blue'></a>)
- 
 ## Getting started
 This code was developed on Ubuntu 18.04 with Python 3.8, CUDA 11.3 and PyTorch 1.12.0. Later versions should work, but have not been tested.
 
