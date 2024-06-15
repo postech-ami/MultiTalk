@@ -1,0 +1,1 @@
+sh scripts/test.sh MultiTalk_s2 config/multi/stage2.yaml multi s2

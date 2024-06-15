@@ -1,0 +1,47 @@
+DATA:
+  dataset: multi
+  data_root: sample_dataset
+  wav_path: wav
+  vertices_path: npy
+  template_file: templates.pkl
+  train_subjects: Arabic English French German Greek Italian Portuguese Russian Spanish Korean Mandarin Japanese
+
+NETWORK:
+  arch: stage2
+  in_dim: 15069
+  hidden_size: 1024
+  num_hidden_layers: 6
+  num_attention_heads: 8
+  intermediate_size: 1536
+  window_size: 1
+  quant_factor: 0
+  face_quan_num: 16
+  neg: 0.2
+  autoencoder: stage1_vocaset
+  INaffine: False
+  style_emb_method: nnemb # onehot or nnemb
+
+VQuantizer:
+  n_embed: 256
+  zquant_dim: 64
+
+PREDICTOR:
+  feature_dim: 1024
+  vertice_dim: 15069
+  device: cuda
+  period: 25
+  vqvae_pretrained_path: checkpoints/stage1.pth.tar
+  wav2vec2model_path: facebook/wav2vec2-large-xlsr-53
+  teacher_forcing: True
+  num_layers: 6
+  n_head: 4 # not used
+
+DEMO:
+  model_path: checkpoints/stage2.pth.tar
+  #condition: False #if false, the waveform file has the cue for the type of language
+  condition: English
+  subject: id
+  demo_wav_dir_path: demo/input/
+  demo_output_path: demo/output/
+  fps: 25
+  background_black: True # chose the background color of your rendered video
