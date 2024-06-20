@@ -120,7 +120,6 @@ if __name__ == '__main__':
 
     json_path = os.path.join('./annotations', f'{args.language}.json')  # json file path
 
-    video_count = 0
     for vid_id, save_vid_name, time, bbox, language in load_data(json_path):
         processed_vid_dir = os.path.join(processed_vid_root, language)
         raw_vid_dir = os.path.join(raw_vid_root, language)
@@ -139,11 +138,6 @@ if __name__ == '__main__':
                 continue
 
         process_ffmpeg(raw_vid_path, processed_vid_dir, save_vid_name, bbox, time)
-        video_count = video_count + 1
-        if video_count ==10:
-            break
-
-    print(f"Total video_count = {video_count}")
 
     # you can remove this directory after downloading
     # os.rmdir(raw_vid_root)
