@@ -2,6 +2,9 @@
 MultiTalk dataset is a new multilingual 2D video dataset featuring over 420 hours of talking videos across 20 languages. 
 It contains 293,812 clips with a resolution of 512x512, a frame rate of 25 fps, and an average duration of 5.19 seconds per clip.
 The dataset shows a balanced distribution across languages, with each language representing between 2.0% and 9.7% of the total.
+
+<img src="./assets/statistic.png" width="96%" height="96%">
+
 ### <details><summary>Detailed statistics</summary><p>
 
 | Language | Total Duration(h) | #Clips | Avg. Duration(s) | Annotation |
@@ -26,3 +29,4 @@ The dataset shows a balanced distribution across languages, with each language r
 | Thai | 10.95 | 7595 | 5.19 | [thai.json](https://github.com/postech-ami/MultiTalk/tree/main/MultiTalk_Dataset/annotations/thai.json) |
 | Turkish | 12.9 | 11165 | 4.16 | [turkish.json](https://github.com/postech-ami/MultiTalk/tree/main/MultiTalk_Dataset/annotations/turkish.json) |
 | Ukrainian | 41.0 | 24650 | 5.99 | [ukrainian.json](https://github.com/postech-ami/MultiTalk/tree/main/MultiTalk_Dataset/annotations/ukrainian.json) |
+</p></details>
