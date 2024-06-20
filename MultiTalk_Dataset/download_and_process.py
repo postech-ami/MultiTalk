@@ -144,4 +144,3 @@ if __name__ == '__main__':
 
     print(f"Total video_count = {video_count}")
     #os.rmdir(raw_vid_root)
-
