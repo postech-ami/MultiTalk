@@ -30,9 +30,6 @@ def downloadYouTube(yt, videourl, path):
 
         os.remove(video_path)
         os.remove(audio_path)
-        return True
-    else:
-        return False
 
 def process_ffmpeg(raw_vid_path, save_folder, save_vid_name,
                    bbox, time):
@@ -133,7 +130,7 @@ if __name__ == '__main__':
             while True:
                 try:
                     yt = YouTube(url, use_oauth=True)
-                    success = downloadYouTube(yt, url, raw_vid_dir)
+                    downloadYouTube(yt, url, raw_vid_dir)
                     break
                 except:
                     continue
