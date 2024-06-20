@@ -1,9 +1,10 @@
 ## Overview
 MultiTalk dataset is a new multilingual 2D video dataset featuring over 420 hours of talking videos across 20 languages. 
 It contains 293,812 clips with a resolution of 512x512, a frame rate of 25 fps, and an average duration of 5.19 seconds per clip.
-The dataset shows a balanced distribution across languages, with each language representing between 2.0% and 9.7% of the total.
+The dataset shows a balanced distribution across languages, with each language representing between 2.0% and 9.7% of the total.  
 
-<img alt="statistic" src="../assets/statistic.png" width="90%" height="90%">
+<img alt="statistic" src="../assets/statistic.png" width=560>
+
 
 <details><summary><b>Detailed statistics</b></summary><p>
 
@@ -30,3 +31,66 @@ The dataset shows a balanced distribution across languages, with each language r
 | Turkish | 12.9 | 11165 | 4.16 | [turkish.json](https://github.com/postech-ami/MultiTalk/tree/main/MultiTalk_Dataset/annotations/turkish.json) |
 | Ukrainian | 41.0 | 24650 | 5.99 | [ukrainian.json](https://github.com/postech-ami/MultiTalk/tree/main/MultiTalk_Dataset/annotations/ukrainian.json) |
 </p></details>
+
+## Download
+
+### Usage
+**Prepare the environment:**
+```bash
+pip install pytube
+pip install opencv-python
+```
+
+**Run script:** 
+```bash
+cd MultiTalk_Dataset
+``` 
+You can provide the language you want to download as an argument. If you want to download all 20 languages, run the following script.  
+```bash
+sh dataset.sh arabic catalan croatian czech dutch english french german greek hindi italian japanese mandarin polish portuguese russian spanish thai turkish ukrainian
+```
+
+After downloading, the folder structure will be as below. Each language folder contains the .mp4 videos.  
+You can change the ${ROOT} folder in the [code](https://github.com/postech-ami/MultiTalk/tree/main/MultiTalk_Dataset/download_and_process.py).
+```
+    ${ROOT}
+    ├── multitalk_dataset        # MultiTalk Dataset
+    │   ├── arabic
+    │   │   ├── O-VJXuHb390_0.mp4
+    │   │   ├── O-VJXuHb390_1.mp4
+    │   │   ├── ...
+    │   │   └── ...             
+    │   ├── catalan                                        
+    │   ├── ...          
+    │   └── ...                 
+    └── raw_video              # Original videos (you can remove this directory after downloading)
+        ├── arabic              
+        ├── catalan                          
+        ├── ...          
+        └── ...
+```
+
+### JSON File Structure
+```javascript
+{
+    "QrDZjUeiUwc_0":  // clip 1 
+    {
+        "youtube_id": "QrDZjUeiUwc",                                // youtube id
+        "duration": {"start_sec": 302.0, "end_sec": 305.56},        // start and end times in the original video
+        "bbox": {"top": 0.0, "bottom": 0.8167, "left": 0.4484, "right": 0.9453},  // bounding box
+        "language": "czech",                                         // language
+        "transcript": "já jsem v podstatě obnovil svůj list z minulého roku"      // transcript
+    },
+    "QrDZjUeiUwc_1":  // clip 2 
+    {
+        "youtube_id": "QrDZjUeiUwc",                                
+        "duration": {"start_sec": 0.12, "end_sec": 4.12},        
+        "bbox": {"top": 0.0097, "bottom": 0.55, "left": 0.3406, "right": 0.6398},  
+        "language": "czech",                                       
+        "transcript": "ahoj tady anička a vítejte u dalšího easycheck videa"      
+    }
+    "..."
+    "..."
+
+}
+```
