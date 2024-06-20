@@ -112,7 +112,7 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     # you can change the root folder
-    root = '/data/MultiTalk'
+    root = './'
     processed_vid_root = os.path.join(root, 'multitalk_dataset') # processed video path
     raw_vid_root = os.path.join(root, 'raw_video')  # downloaded raw video path
     os.makedirs(processed_vid_root, exist_ok=True)
@@ -131,10 +131,12 @@ if __name__ == '__main__':
         url = 'https://www.youtube.com/watch?v='+vid_id
         if not os.path.isfile(raw_vid_path) :
             while True:
-                yt = YouTube(url, use_oauth=True)
-                success = downloadYouTube(yt, url, raw_vid_dir)
-                if success:
+                try:
+                    yt = YouTube(url, use_oauth=True)
+                    success = downloadYouTube(yt, url, raw_vid_dir)
                     break
+                except:
+                    continue
 
         process_ffmpeg(raw_vid_path, processed_vid_dir, save_vid_name, bbox, time)
 
