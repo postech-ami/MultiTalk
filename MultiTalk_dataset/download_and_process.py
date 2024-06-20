@@ -1,7 +1,3 @@
-"""
-Downloader
-"""
-
 import os
 import json
 import cv2
@@ -10,6 +6,7 @@ from pytube import Playlist, YouTube
 from pytube.exceptions import VideoUnavailable
 import os
 import subprocess
+
 def downloadYouTube(yt, videourl, path):
     video_stream = yt.streams.filter(progressive=False, file_extension='mp4').order_by('resolution').desc().first()
     audio_stream = yt.streams.filter(only_audio=True).order_by('abr').desc().first()
@@ -114,12 +111,14 @@ if __name__ == '__main__':
     parser.add_argument('--language', type=str, default="dutch", help='Language')
     args = parser.parse_args()
 
-    processed_vid_root = './processed_video'
-    json_path = os.path.join('./annotations', f'{args.language}.json')  # json file path
-    raw_vid_root = './raw_video'  # download raw video path
-
+    # you can change the root folder
+    root = './'
+    processed_vid_root = os.path.join(root, 'multitalk_dataset') # processed video path
+    raw_vid_root = os.path.join(root, 'raw_video')  # downloaded raw video path
     os.makedirs(processed_vid_root, exist_ok=True)
     os.makedirs(raw_vid_root, exist_ok=True)
+
+    json_path = os.path.join('./annotations', f'{args.language}.json')  # json file path
 
     video_count = 0
     for vid_id, save_vid_name, time, bbox, language in load_data(json_path):
@@ -141,6 +140,10 @@ if __name__ == '__main__':
 
         process_ffmpeg(raw_vid_path, processed_vid_dir, save_vid_name, bbox, time)
         video_count = video_count + 1
+        if video_count ==10:
+            break
 
     print(f"Total video_count = {video_count}")
-    #os.rmdir(raw_vid_root)
+
+    # you can remove this directory after downloading
+    # os.rmdir(raw_vid_root)
