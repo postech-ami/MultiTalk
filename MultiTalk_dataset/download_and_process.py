@@ -5,6 +5,7 @@ import argparse
 from pytube import Playlist, YouTube
 from pytube.exceptions import VideoUnavailable
 import os
+import shutil
 import subprocess
 
 def downloadYouTube(yt, videourl, path):
@@ -30,6 +31,10 @@ def downloadYouTube(yt, videourl, path):
 
         os.remove(video_path)
         os.remove(audio_path)
+        return True
+
+    else:
+        return False
 
 def process_ffmpeg(raw_vid_path, save_folder, save_vid_name,
                    bbox, time):
@@ -126,16 +131,17 @@ if __name__ == '__main__':
         os.makedirs(raw_vid_dir, exist_ok=True)
 
         url = 'https://www.youtube.com/watch?v='+vid_id
+        success = True
         if not os.path.isfile(raw_vid_path) :
             while True:
                 try:
                     yt = YouTube(url, use_oauth=True)
-                    downloadYouTube(yt, url, raw_vid_dir)
+                    success = downloadYouTube(yt, url, raw_vid_dir)
                     break
                 except:
                     continue
-
-        process_ffmpeg(raw_vid_path, processed_vid_dir, save_vid_name, bbox, time)
+        if success:
+            process_ffmpeg(raw_vid_path, processed_vid_dir, save_vid_name, bbox, time)
 
     # you can remove this directory after downloading
-    # os.rmdir(raw_vid_root)
+    # shutil.rmtree(raw_vid_root)
