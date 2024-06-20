@@ -5,7 +5,7 @@ The dataset shows a balanced distribution across languages, with each language r
 
 <img src="./assets/statistic.png" width="96%" height="96%">
 
-### <details><summary>Detailed statistics</summary><p>
+<details><summary><b>Detailed statistics</b></summary><p>
 
 | Language | Total Duration(h) | #Clips | Avg. Duration(s) | Annotation |
 |:---:|:---:|:---:|:---:|:---:|
