@@ -1,9 +1,12 @@
 ## Overview
 MultiTalk dataset is a new multilingual 2D video dataset featuring over 420 hours of talking videos across 20 languages. 
 It contains 293,812 clips with a resolution of 512x512, a frame rate of 25 fps, and an average duration of 5.19 seconds per clip.
-The dataset shows a balanced distribution across languages, with each language representing between 2.0% and 9.7% of the total.
+The dataset shows a balanced distribution across languages, with each language representing between 2.0% and 9.7% of the total.  
 
-<img alt="statistic" src="../assets/statistic.png" width="90%" height="90%">
+<div align="center">
+<img alt="statistic" src="../assets/statistic.png" width=560>
+</div>
+
 
 <details><summary><b>Detailed statistics</b></summary><p>
 
