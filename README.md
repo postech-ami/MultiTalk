@@ -1,6 +1,6 @@
 # MultiTalk (INTERSPEECH 2024)
 
-### [Project Page](https://multi-talk.github.io/) | [Paper](https://multi-talk.github.io/)
+### [Project Page](https://multi-talk.github.io/) | [Paper](https://multi-talk.github.io/) | [Dataset](https://github.com/postech-ami/MultiTalk/MultiTalk_Dataset/README.md)
 This repository contains a pytorch implementation for the Interspeech 2024 paper, [MultiTalk: Enhancing 3D Talking Head Generation Across Languages with Multilingual Video Dataset](https://multi-talk.github.io/). MultiTalk generates 3D talking head with enhanced multilingual performance.<br><br>
 
 <img width="700" alt="teaser" src="https://github.com/postech-ami/MultiTalk/assets/59387731/274bd3d6-6f78-4825-af02-0e17ef722c00"> 
@@ -57,6 +57,9 @@ L105: tokenizer = Wav2Vec2CTCTokenizer.from_pretrained(pretrained_model_name_or_
 to
 L105: tokenizer=Wav2Vec2CTCTokenizer.from_pretrained("facebook/wav2vec2-base-960h",**kwargs)
 ```
+
+## MultiTalk Dataset
+Please follow the instructions in [MultiTalk_Dataset/README.md](https://github.com/postech-ami/MultiTalk/MultiTalk_Dataset/README.md).
 
 ## Training and testing
 
