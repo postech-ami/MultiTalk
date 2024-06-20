@@ -45,7 +45,7 @@ pip install opencv-python
 ```bash
 cd MultiTalk_Dataset
 ``` 
-You can provide the language you want to download as an argument. If you want to download all 20 languages, run the following script.  
+You can pass the language you want to download as an argument to the script. If you want to download all 20 languages, run the following script.  
 ```bash
 sh dataset.sh arabic catalan croatian czech dutch english french german greek hindi italian japanese mandarin polish portuguese russian spanish thai turkish ukrainian
 ```
