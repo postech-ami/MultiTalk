@@ -1,6 +1,6 @@
 # MultiTalk (INTERSPEECH 2024)
 
-### [Project Page](https://multi-talk.github.io/) | [Paper](https://multi-talk.github.io/) | [Dataset](https://github.com/postech-ami/MultiTalk/blob/main/MultiTalk_dataset/README.md)
+### [Project Page](https://multi-talk.github.io/) | [Paper](https://arxiv.org/abs/2406.14272) | [Dataset](https://github.com/postech-ami/MultiTalk/blob/main/MultiTalk_dataset/README.md)
 This repository contains a pytorch implementation for the Interspeech 2024 paper, [MultiTalk: Enhancing 3D Talking Head Generation Across Languages with Multilingual Video Dataset](https://multi-talk.github.io/). MultiTalk generates 3D talking head with enhanced multilingual performance.<br><br>
 
 <img width="700" alt="teaser" src="./assets/teaser.png"> 
