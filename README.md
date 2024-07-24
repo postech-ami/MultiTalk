@@ -58,6 +58,12 @@ to
 L105: tokenizer=Wav2Vec2CTCTokenizer.from_pretrained("facebook/wav2vec2-base-960h",**kwargs)
 ```
 
+## Agreement
+- The MultiTalk dataset is provided for non-commercial research purposes only. 
+- All videos of the MultiTalk dataset are sourced from the Internet and do not belong to our institutions. Our institutions do not take responsibility for the content or the meaning of these videos.
+- You agree not to reproduce, duplicate, copy, sell, trade, resell, or exploit any portion of the videos and any portion of derived data for commercial purposes.
+- You agree not to further copy, publish, or distribute any portion of the MultiTalk dataset. Except, it is allowed to make copies of the dataset for internal use at a single site within the same organization.
+
 ## MultiTalk Dataset
 Please follow the instructions in [MultiTalk_dataset/README.md](https://github.com/postech-ami/MultiTalk/blob/main/MultiTalk_dataset/README.md).
 
@@ -135,6 +141,5 @@ python eval_avlr/eval_avlr.py --avhubert-path ./av_hubert/avhubert --work-dir ./
 
 ## **Acknowledgement**
 We heavily borrow the code from
-[Codetalk](https://doubiiu.github.io/projects/codetalker/).
-We sincerely appreciate those authors.
+[CodeTalk](https://doubiiu.github.io/projects/codetalker/) and [CelebV-HQ](https://github.com/CelebV-HQ/CelebV-HQ?tab=readme-ov-file), and the agreement statement from [CelebV-HQ](https://github.com/CelebV-HQ/CelebV-HQ?tab=readme-ov-file). We sincerely appreciate those authors.
 
