@@ -138,6 +138,18 @@ python eval_avlr/eval_avlr.py --avhubert-path ./av_hubert/avhubert --work-dir ./
 ## **Notes**
 1. Although our codebase allows for training with multi-GPUs, we did not test it and just hardcode the training batch size as one. You may need to change the `data_loader` if needed.
 
+```
+@inproceedings{sungbin24_interspeech,
+  title     = {MultiTalk: Enhancing 3D Talking Head Generation Across Languages with Multilingual Video Dataset},
+  author    = {Kim Sung-Bin and Lee Chae-Yeon and Gihun Son and Oh Hyun-Bin and Janghoon Ju and Suekyeong Nam and Tae-Hyun Oh},
+  year      = {2024},
+  booktitle = {Interspeech 2024},
+  pages     = {1380--1384},
+  doi       = {10.21437/Interspeech.2024-1794},
+  issn      = {2958-1796},
+}
+```
+
 
 ## **Acknowledgement**
 We heavily borrow the code from
